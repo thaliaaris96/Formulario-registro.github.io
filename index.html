@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud HTTP por el método POST</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/peticion.js"></script>
+</head>
+
+<body>
+    <h1>Registro de usuario</h1>
+    <form class="formulario" id="registroForm" action="" method="post">
+        <label for="nombre"> Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="apellido"> Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+        <label for="date"> Fecha nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        <button type="submit" id="btnRegistro">Registrar</button>
+    </form>
+</body>
+
+</html>
