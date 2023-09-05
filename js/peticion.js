@@ -1,32 +1,26 @@
-
-const btnRegistro = document.getElementById('btnRegistro')
-
-btnRegistro.addEventListener('click', () => {
-    const datos = {
-        nombre: document.getElementById('nombre').value,
-        apellido: document.getElementById('apellido').value,
-        fechaNacimiento: document.getElementById('fechaNacimiento').value
+async function postJSON(data) {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        console.log("Exito al enviar registro:", result);
+    } catch (error) {
+        console.error("Error:", error);
     }
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(datos),
-    };
+}
 
-    fetch('https://jsonplaceholder.typicode.com/users.', options)
-    
-    .then(response => {
-        if (!response.ok) {
-            throw Error(response.status);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(datos); // Muestra la respuesta
-    })
-    .catch(error => {
-        console.log('Error en la solicitud:', error);
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        postJSON({
+            nombre: document.getElementById('nombre').value,
+            apellido: document.getElementById('apellido').value,
+            date: document.getElementById('fechaNacimiento').value
+        });
     });
 });
