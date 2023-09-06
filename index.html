@@ -10,15 +10,18 @@
 </head>
 
 <body>
-    <h1>Registro de usuario</h1>
-    <form class="formulario" id="registroForm" action="" method="post">
-        <label for="nombre"> Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
-        <label for="apellido"> Apellido:</label>
-        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
-        <label for="date"> Fecha nacimiento:</label>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-        <button type="submit" id="btnRegistro">Registrar</button>
-    </form>
+    <section class="content-form">
+        <h1>Registro de usuario</h1>
+        <form class="formulario" id="registroForm" action="" method="post">
+            <label for="nombre"> Nombre:</label>
+            <input class="controls" type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+            <label for="apellido"> Apellido:</label>
+            <input class="controls" type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+            <label for="date"> Fecha nacimiento:</label>
+            <input class="controls" type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            <p>Estoy de acuerdo con <a href="#">Términos y condiciones</a></p>
+            <button type="submit" id="btnRegistro">Registrar</button>
+        </form>
+    </section>
 </body>
 </html>
